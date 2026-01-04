@@ -3,13 +3,14 @@ import { AnimatedTextLines } from "../components/AnimatedTextLines";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+/* Props for reusable animated header component */
 interface AnimatedHeaderSectionProps {
-    subTitle: string;
-    title: string;
-    text: string;
-    textColor: string;
-    withScrollTrigger?: boolean;
-    withClipPath?: boolean; 
+    subTitle: string;           // Small uppercase text above title
+    title: string;              // Large banner title
+    text: string;               // Description text with animated lines
+    textColor: string;          // Tailwind color class (text-white, text-black)
+    withScrollTrigger?: boolean; // Enable scroll-based animation
+    withClipPath?: boolean;      // Enable clip-path reveal effect
 }
 
 
@@ -19,15 +20,18 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
     text,
     textColor,
     withScrollTrigger = false,
-    withClipPath = false, 
+    withClipPath = false,
 }) => {
+    /* Refs for GSAP animations */
     const contextRef = useRef<HTMLDivElement | null>(null);
     const headerRef = useRef<HTMLDivElement | null>(null);
 
+    /* Split title into parts if it contains spaces for better layout */
     const shouldSplitTitle = title.includes(" ");
     const titleParts = shouldSplitTitle ? title.split(" ") : [title];
 
     useGSAP(() => {
+        /* Create timeline with optional scroll trigger */
         const tl = gsap.timeline({
             scrollTrigger: withScrollTrigger
                 ? {
@@ -36,12 +40,14 @@ const AnimatedHeaderSection: React.FC<AnimatedHeaderSectionProps> = ({
                 : undefined,
         });
 
+        /* Animate container from bottom */
         tl.from(contextRef.current, {
             y: "50vh",
             duration: 1,
             ease: "circ.out",
         });
 
+        /* Animate header content with slight delay */
         tl.from(
             headerRef.current,
             {

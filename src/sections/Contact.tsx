@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
     const text = `¿Tienes una pregunta, propuesta o idea de proyecto?
     Me encantaría escucharte y discutir más a fondo.`;
 
+    /* Marquee items for bottom animation */
     const items = [
         "solo imagina, yo codifico",
         "solo imagina, yo codifico",
@@ -16,6 +17,7 @@ const Contact: React.FC = () => {
         "solo imagina, yo codifico",
     ];
 
+    /* Animate contact links on scroll with stagger */
     useGSAP(() => {
         gsap.from(".social-link", {
             y: 100,

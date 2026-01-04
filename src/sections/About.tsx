@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { aboutData } from "../constants";
 
 const About: React.FC = () => {
+    /* Build about text dynamically from centralized constants */
     const aboutText = `${aboutData.introES}
 
 🚀 Proyecto Destacado: ${aboutData.featuredProject.name}

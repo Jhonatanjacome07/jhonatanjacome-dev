@@ -6,6 +6,7 @@ import gsap from "gsap";
 const ContactSummary: React.FC = () => {
     const containerRef = useRef<HTMLElement>(null);
 
+    /* Brand values for top marquee */
     const items = [
         "Innovación",
         "Precisión",
@@ -14,6 +15,7 @@ const ContactSummary: React.FC = () => {
         "Excelencia",
     ];
 
+    /* Contact CTA for bottom marquee */
     const items2 = [
         "contáctame",
         "contáctame",
@@ -22,6 +24,7 @@ const ContactSummary: React.FC = () => {
         "contáctame",
     ];
 
+    /* Pin section during scroll for emphasis */
     useGSAP(() => {
         gsap.to(containerRef.current, {
             scrollTrigger: {
