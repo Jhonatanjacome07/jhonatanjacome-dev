@@ -8,6 +8,7 @@ import About from "./sections/About";
 import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
+import FloatingLanguageToggle from "./components/FloatingLanguageToggle";
 
 
 import { useProgress } from "@react-three/drei";
@@ -41,6 +42,7 @@ const App = () => {
         className={`${isReady ? "opacity-100" : "opacity-0"
           } transition-opacity duration-1000`}
       >
+        <FloatingLanguageToggle  />
         <Navbar />
         <Hero />
         <ServiceSummary />
