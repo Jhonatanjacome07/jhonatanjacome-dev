@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
-import LanguageToggle from "../components/LanguageToggle";
 
 
 const Navbar: React.FC = () => {
@@ -123,12 +122,13 @@ const Navbar: React.FC = () => {
                 ref={navRef}
                 className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2"
             >
-                <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl">
+                <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-6xl">
                     {[
                         { id: "home", label: t('nav.home') },
                         { id: "services", label: t('nav.services') },
-                        { id: "about", label: t('nav.about') },
                         { id: "work", label: t('nav.work') },
+                        { id: "techstack", label: t('nav.techstack', { defaultValue: 'Tech Stack' }) },
+                        { id: "about", label: t('nav.about') },
                         { id: "contact", label: t('nav.contact') }
                     ].map((section, index) => (
                         <div key={index} ref={(el) => { linksRef.current[index] = el; }}>
@@ -170,9 +170,6 @@ const Navbar: React.FC = () => {
                                 </a>
                             ))}
                         </div>
-                    </div>
-                    <div className="mt-4">
-                        <LanguageToggle />
                     </div>
                 </div>
             </nav>
