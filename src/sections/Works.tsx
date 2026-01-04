@@ -6,19 +6,26 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Works: React.FC = () => {
+    /* Refs for hover overlay animations on each project */
     const overlayRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    /* Ref for floating preview image that follows cursor */
     const previewRef = useRef<HTMLDivElement>(null);
 
+    /* Track which project is currently being hovered */
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+
     const text = `Proyectos destacados que han sido meticulosamente
     creados con pasión para generar
     resultados e impacto.`;
 
+    /* Mouse position tracking for smooth preview following */
     const mouse = useRef({ x: 0, y: 0 });
     const moveX = useRef<((value: number) => void) | null>(null);
     const moveY = useRef<((value: number) => void) | null>(null);
 
     useGSAP(() => {
+        /* Setup smooth cursor following for preview image */
         moveX.current = gsap.quickTo(previewRef.current, "x", {
             duration: 1.5,
             ease: "power3.out",
@@ -28,6 +35,7 @@ const Works: React.FC = () => {
             ease: "power3.out",
         });
 
+        /* Animate projects on scroll - staggered entrance */
         gsap.from("#project", {
             y: 100,
             opacity: 0,
@@ -41,13 +49,15 @@ const Works: React.FC = () => {
         });
     }, []);
 
+    /* Handle project hover - show overlay and preview (desktop only) */
     const handleMouseEnter = (index: number) => {
-        if (window.innerWidth < 768) return;
+        if (window.innerWidth < 768) return; // Skip on mobile
         setCurrentIndex(index);
 
         const el = overlayRefs.current[index];
         if (!el) return;
 
+        /* Animate black overlay with clip-path reveal */
         gsap.killTweensOf(el);
         gsap.fromTo(
             el,
@@ -61,6 +71,7 @@ const Works: React.FC = () => {
             }
         );
 
+        /* Show floating preview image */
         gsap.to(previewRef.current, {
             opacity: 1,
             scale: 1,
@@ -69,13 +80,15 @@ const Works: React.FC = () => {
         });
     };
 
+    /* Handle project mouse leave - hide overlay and preview */
     const handleMouseLeave = (index: number) => {
-        if (window.innerWidth < 768) return;
+        if (window.innerWidth < 768) return; // Skip on mobile
         setCurrentIndex(null);
 
         const el = overlayRefs.current[index];
         if (!el) return;
 
+        /* Hide black overlay with clip-path */
         gsap.killTweensOf(el);
         gsap.to(el, {
             clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
@@ -83,6 +96,7 @@ const Works: React.FC = () => {
             ease: "power2.in",
         });
 
+        /* Hide floating preview image */
         gsap.to(previewRef.current, {
             opacity: 0,
             scale: 0.95,
@@ -91,9 +105,10 @@ const Works: React.FC = () => {
         });
     };
 
+    /* Update preview image position to follow cursor with offset */
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (window.innerWidth < 768) return;
-        mouse.current.x = e.clientX + 24;
+        if (window.innerWidth < 768) return; // Skip on mobile
+        mouse.current.x = e.clientX + 24; // Offset from cursor
         mouse.current.y = e.clientY + 24;
         moveX.current?.(mouse.current.x);
         moveY.current?.(mouse.current.y);

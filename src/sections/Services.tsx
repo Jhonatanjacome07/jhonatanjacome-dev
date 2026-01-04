@@ -13,10 +13,14 @@ const Services: React.FC = () => {
     con experiencia de usuario fluida para impulsar el crecimiento,
     no dolores de cabeza.`;
 
+    /* Refs for each service card to animate on scroll */
     const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    /* Check if viewport is desktop for sticky scroll effect */
     const isDesktop = useMediaQuery({ minWidth: "48rem" }); //768px
 
     useGSAP(() => {
+        /* Animate each service card on scroll */
         serviceRefs.current.forEach((el) => {
             if (!el) return;
 
@@ -48,6 +52,7 @@ const Services: React.FC = () => {
                     key={index}
                     className="sticky px-10 pt-6 pb-12 text-white bg-black border-t-2 border-white/30"
                     style={
+                        /* Sticky scroll effect: cards stack on top of each other (desktop only) */
                         isDesktop
                             ? {
                                 top: `calc(10vh + ${index * 5}em)`,

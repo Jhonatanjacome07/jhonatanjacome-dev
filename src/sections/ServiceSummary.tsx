@@ -5,9 +5,6 @@ import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// 📌 EXPLICACIÓN: Componente que muestra palabras clave de servicios
-// con efecto parallax (se mueven al hacer scroll)
-
 const ServiceSummary: React.FC = () => {
     useGSAP(() => {
         gsap.to("#title-service-1", {
@@ -42,12 +39,10 @@ const ServiceSummary: React.FC = () => {
 
     return (
         <section className="mt-20 overflow-hidden font-light leading-snug text-center mb-42 contact-text-responsive">
-            {/* 📌 Línea 1: IA & Automatización */}
+ 
             <div id="title-service-1">
                 <p>IA & Automatización</p>
             </div>
-
-            {/* 📌 Línea 2: Full Stack con línea dorada */}
             <div
                 id="title-service-2"
                 className="flex items-center justify-center gap-3 translate-x-16"
@@ -56,8 +51,6 @@ const ServiceSummary: React.FC = () => {
                 <div className="w-10 h-1 md:w-32 bg-gold" />
                 <p>Development</p>
             </div>
-
-            {/* 📌 Línea 3: React, TypeScript, Laravel */}
             <div
                 id="title-service-3"
                 className="flex items-center justify-center gap-3 -translate-x-48"
@@ -68,8 +61,6 @@ const ServiceSummary: React.FC = () => {
                 <div className="w-10 h-1 md:w-32 bg-gold" />
                 <p>Laravel</p>
             </div>
-
-            {/* 📌 Línea 4: Bases de Datos */}
             <div id="title-service-4" className="translate-x-48">
                 <p>Bases de Datos</p>
             </div>
