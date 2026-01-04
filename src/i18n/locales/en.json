@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "about": "About Me",
+    "techstack": "Tech Stack",
     "work": "Projects",
     "contact": "Contact",
     "email": "Email",
@@ -165,5 +166,10 @@
     "text4": "inspiring",
     "text5": "web application",
     "text6": "together"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "subtitle": "Tools I Master, Solutions I Build",
+    "headerText": "Modern and proven technologies I use to create robust, scalable, and high-performance web solutions."
   }
 }

@@ -3,6 +3,7 @@
     "home": "Inicio",
     "services": "Servicios",
     "about": "Sobre Mí",
+    "techstack": "Stack Tecnológico",
     "work": "Proyectos",
     "contact": "Contacto",
     "email": "Correo",
@@ -165,5 +166,10 @@
     "text4": "inspiradora",
     "text5": "aplicación web",
     "text6": "juntos"
+  },
+  "techStack": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Herramientas que Domino, Soluciones que Construyo",
+    "headerText": "Tecnologías modernas y probadas que utilizo para crear soluciones web robustas, escalables y de alto rendimiento."
   }
 }
