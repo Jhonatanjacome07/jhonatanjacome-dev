@@ -331,3 +331,96 @@ export const socials: Social[] = [
     href: "https://github.com/Jhonatanjacome07",
   },
 ];
+
+// ============================================
+// TIPOS - TECH STACK SECTION
+// ============================================
+
+export interface Technology {
+  name: string;
+  icon: string; // Iconify icon name
+  color: string; // Brand color for hover effect
+}
+
+export interface TechStackCategory {
+  categoryES: string;
+  categoryEN: string;
+  technologies: Technology[];
+}
+
+// ============================================
+// DATOS - TECH STACK
+// ============================================
+
+export const techStackData: TechStackCategory[] = [
+  {
+    categoryES: "Frontend",
+    categoryEN: "Frontend",
+    technologies: [
+      { name: "JavaScript", icon: "logos:javascript", color: "#F7DF1E" },
+      { name: "TypeScript", icon: "logos:typescript-icon", color: "#3178C6" },
+      { name: "React", icon: "logos:react", color: "#61DAFB" },
+      { name: "Next.js", icon: "logos:nextjs-icon", color: "#000000" },
+      { name: "Tailwind CSS", icon: "logos:tailwindcss-icon", color: "#38B2AC" },
+      { name: "HTML5", icon: "logos:html-5", color: "#E34F26" },
+      { name: "CSS3", icon: "logos:css-3", color: "#1572B6" },
+      { name: "Bootstrap", icon: "logos:bootstrap", color: "#7952B3" },
+      { name: "Shadcn/ui", icon: "simple-icons:shadcnui", color: "#000000" },
+      { name: "GSAP", icon: "logos:greensock-icon", color: "#88CE02" },
+      { name: "Framer Motion", icon: "logos:framer", color: "#0055FF" },
+      { name: "Lenis", icon: "simple-icons:scrollreveal", color: "#FF6B6B" },
+    ],
+  },
+  {
+    categoryES: "Backend & Bases de Datos",
+    categoryEN: "Backend & Databases",
+    technologies: [
+      { name: "PHP", icon: "logos:php", color: "#777BB4" },
+      { name: "Laravel", icon: "logos:laravel", color: "#FF2D20" },
+      { name: "Node.js", icon: "logos:nodejs-icon", color: "#339933" },
+      { name: "Java", icon: "logos:java", color: "#ED8B00" },
+      { name: "PostgreSQL", icon: "logos:postgresql", color: "#336791" },
+      { name: "MySQL", icon: "logos:mysql", color: "#4479A1" },
+      { name: "Supabase", icon: "logos:supabase-icon", color: "#3ECF8E" },
+    ],
+  },
+  {
+    categoryES: "IA & Automatización",
+    categoryEN: "AI & Automation",
+    technologies: [
+      { name: "n8n", icon: "simple-icons:n8n", color: "#EA4B71" },
+      { name: "Flowise", icon: "simple-icons:flowise", color: "#6366F1" },
+      { name: "Gemini", icon: "simple-icons:googlegemini", color: "#8E75B2" },
+      { name: "ChatGPT", icon: "simple-icons:openai", color: "#74aa9c" },
+      { name: "Retell AI", icon: "simple-icons:ai", color: "#FF6B9D" },
+      { name: "Vapi", icon: "simple-icons:v", color: "#00D9FF" },
+      { name: "Chatwoot", icon: "simple-icons:chatwoot", color: "#1F93FF" },
+    ],
+  },
+  {
+    categoryES: "Cloud & Deployment",
+    categoryEN: "Cloud & Deployment",
+    technologies: [
+      { name: "Vercel", icon: "logos:vercel-icon", color: "#000000" },
+      { name: "Netlify", icon: "logos:netlify-icon", color: "#00C7B7" },
+      { name: "Railway", icon: "simple-icons:railway", color: "#0B0D0E" },
+      { name: "Digital Ocean", icon: "logos:digital-ocean", color: "#0080FF" },
+      { name: "Contabo", icon: "simple-icons:contabo", color: "#FF6600" },
+      { name: "Hostinger", icon: "simple-icons:hostinger", color: "#673DE6" },
+      { name: "Cloudinary", icon: "logos:cloudinary-icon", color: "#3448C5" },
+    ],
+  },
+  {
+    categoryES: "Herramientas & Diseño",
+    categoryEN: "Tools & Design",
+    technologies: [
+      { name: "Git", icon: "logos:git-icon", color: "#F05032" },
+      { name: "GitHub", icon: "logos:github-icon", color: "#181717" },
+      { name: "VS Code", icon: "logos:visual-studio-code", color: "#007ACC" },
+      { name: "Postman", icon: "logos:postman-icon", color: "#FF6C37" },
+      { name: "Figma", icon: "logos:figma", color: "#F24E1E" },
+      { name: "Eclipse", icon: "logos:eclipse-icon", color: "#2C2255" },
+      { name: "Clerk", icon: "simple-icons:clerk", color: "#6C47FF" },
+    ],
+  },
+];
