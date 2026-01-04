@@ -3,18 +3,19 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import Marquee from "../components/Marquee";
 import { socials } from "../constants";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 const Contact: React.FC = () => {
-    const text = `¿Tienes una pregunta, propuesta o idea de proyecto?
-    Me encantaría escucharte y discutir más a fondo.`;
+    const { t } = useTranslation();
+    const text = t('contact.headerText', { defaultValue: '¿Tienes una pregunta, propuesta o idea de proyecto? Me encantaría escucharte y discutir más a fondo.' });
 
     /* Marquee items for bottom animation */
     const items = [
-        "solo imagina, yo codifico",
-        "solo imagina, yo codifico",
-        "solo imagina, yo codifico",
-        "solo imagina, yo codifico",
-        "solo imagina, yo codifico",
+        t('contact.marqueeText', { defaultValue: 'solo imagina, yo codifico' }),
+        t('contact.marqueeText', { defaultValue: 'solo imagina, yo codifico' }),
+        t('contact.marqueeText', { defaultValue: 'solo imagina, yo codifico' }),
+        t('contact.marqueeText', { defaultValue: 'solo imagina, yo codifico' }),
+        t('contact.marqueeText', { defaultValue: 'solo imagina, yo codifico' }),
     ];
 
     /* Animate contact links on scroll with stagger */
@@ -39,8 +40,8 @@ const Contact: React.FC = () => {
         >
             <div>
                 <AnimatedHeaderSection
-                    subTitle={"Tú lo Sueñas, Yo lo Codifico"}
-                    title={"Contacto"}
+                    subTitle={t('contact.subtitle', { defaultValue: 'Tú lo Sueñas, Yo lo Codifico' })}
+                    title={t('contact.title')}
                     text={text}
                     textColor={"text-white"}
                     withScrollTrigger={true}
@@ -48,21 +49,21 @@ const Contact: React.FC = () => {
                 <div className="flex px-10 font-light text-white uppercase lg:text-[32px] text-[26px] leading-none mb-10">
                     <div className="flex flex-col w-full gap-10">
                         <div className="social-link">
-                            <h2>E-mail</h2>
+                            <h2>{t('contact.email')}</h2>
                             <div className="w-full h-px my-2 bg-white/30" />
                             <p className="text-xl tracking-wider lowercase md:text-2xl lg:text-3xl">
                                 jhonatanjacome99@gmail.com
                             </p>
                         </div>
                         <div className="social-link">
-                            <h2>Teléfono</h2>
+                            <h2>{t('contact.phone')}</h2>
                             <div className="w-full h-px my-2 bg-white/30" />
                             <p className="text-xl lowercase md:text-2xl lg:text-3xl">
                                 +593 93 945 9669
                             </p>
                         </div>
                         <div className="social-link">
-                            <h2>Redes Sociales</h2>
+                            <h2>{t('contact.socials')}</h2>
                             <div className="w-full h-px my-2 bg-white/30" />
                             <div className="flex flex-wrap gap-2">
                                 {socials.map((social, index) => (

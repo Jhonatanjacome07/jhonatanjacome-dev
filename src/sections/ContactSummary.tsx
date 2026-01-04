@@ -2,26 +2,28 @@ import { useRef } from "react";
 import Marquee from "../components/Marquee";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useTranslation } from "react-i18next";
 
 const ContactSummary: React.FC = () => {
+    const { t } = useTranslation();
     const containerRef = useRef<HTMLElement>(null);
 
     /* Brand values for top marquee */
     const items = [
-        "Innovación",
-        "Precisión",
-        "Confianza",
-        "Colaboración",
-        "Excelencia",
+        t('contactSummary.value1', { defaultValue: 'Innovación' }),
+        t('contactSummary.value2', { defaultValue: 'Precisión' }),
+        t('contactSummary.value3', { defaultValue: 'Confianza' }),
+        t('contactSummary.value4', { defaultValue: 'Colaboración' }),
+        t('contactSummary.value5', { defaultValue: 'Excelencia' }),
     ];
 
     /* Contact CTA for bottom marquee */
     const items2 = [
-        "contáctame",
-        "contáctame",
-        "contáctame",
-        "contáctame",
-        "contáctame",
+        t('contactSummary.cta', { defaultValue: 'contáctame' }),
+        t('contactSummary.cta', { defaultValue: 'contáctame' }),
+        t('contactSummary.cta', { defaultValue: 'contáctame' }),
+        t('contactSummary.cta', { defaultValue: 'contáctame' }),
+        t('contactSummary.cta', { defaultValue: 'contáctame' }),
     ];
 
     /* Pin section during scroll for emphasis */
@@ -47,10 +49,10 @@ const ContactSummary: React.FC = () => {
             <Marquee items={items} />
             <div className="overflow-hidden font-light text-center contact-text-responsive">
                 <p>
-                    " Construyamos una <br />
-                    <span className="font-normal">memorable</span> e{" "}
-                    <span className="italic">inspiradora</span> <br />
-                    aplicación web <span className="text-gold">juntos</span> "
+                    " {t('contactSummary.text1', { defaultValue: 'Construyamos una' })} <br />
+                    <span className="font-normal">{t('contactSummary.text2', { defaultValue: 'memorable' })}</span> {t('contactSummary.text3', { defaultValue: 'e' })}{" "}
+                    <span className="italic">{t('contactSummary.text4', { defaultValue: 'inspiradora' })}</span> <br />
+                    {t('contactSummary.text5', { defaultValue: 'aplicación web' })} <span className="text-gold">{t('contactSummary.text6', { defaultValue: 'juntos' })}</span> "
                 </p>
             </div>
             <Marquee
