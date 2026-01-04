@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Sobre Mí",
+    "work": "Proyectos",
+    "contact": "Contacto",
+    "email": "Correo",
+    "socials": "Redes Sociales"
+  },
+  "services": {
+    "title": "Servicios",
+    "subtitle": "Detrás de escena, Más allá de la pantalla",
+    "headerText": "Creo aplicaciones full-stack seguras y de alto rendimiento con experiencia de usuario fluida para impulsar el crecimiento, no dolores de cabeza.",
+    "service1": {
+      "title": "IA & Automatización",
+      "description": "Transformo operaciones empresariales mediante inteligencia artificial y automatización. Diseño chatbots conversacionales, voicebots y flujos automatizados que resuelven desafíos complejos y generan impacto medible.",
+      "items": {
+        "item1": {
+          "title": "Agentes de IA Conversacionales",
+          "description": "(Chatbots, Voicebots, Personalización con IA)"
+        },
+        "item2": {
+          "title": "Automatización de Procesos",
+          "description": "(n8n, Make, Zapier, Flujos de datos)"
+        },
+        "item3": {
+          "title": "Integración de Sistemas",
+          "description": "(CRMs: Kommo/HubSpot, APIs, Calendly)"
+        }
+      }
+    },
+    "service2": {
+      "title": "Desarrollo Full Stack",
+      "description": "Creo soluciones web completas y eficientes con React, TypeScript y Laravel. Especializado en arquitectura escalable, autenticación robusta y bases de datos optimizadas para aplicaciones de alto rendimiento.",
+      "items": {
+        "item1": {
+          "title": "Backend con Laravel & PHP",
+          "description": "(APIs REST, Autenticación, Notificaciones en tiempo real)"
+        },
+        "item2": {
+          "title": "Frontend Moderno",
+          "description": "(React, TypeScript, Next.js, Tailwind CSS)"
+        },
+        "item3": {
+          "title": "Bases de Datos",
+          "description": "(PostgreSQL, MySQL, Diseño y optimización)"
+        }
+      }
+    },
+    "service3": {
+      "title": "Desarrollo Frontend Especializado",
+      "description": "Interfaces responsive y pixel-perfect que los usuarios aman. Domino React con TypeScript, componentes reutilizables con shadcn/ui, y animaciones fluidas con GSAP para experiencias web premium.",
+      "items": {
+        "item1": {
+          "title": "React + TypeScript",
+          "description": "(Componentes tipados, Hooks, Context API)"
+        },
+        "item2": {
+          "title": "UI/UX Moderno",
+          "description": "(Tailwind CSS, shadcn/ui, Diseño responsive)"
+        },
+        "item3": {
+          "title": "Animaciones Premium",
+          "description": "(GSAP, Framer Motion, Micro-interacciones)"
+        }
+      }
+    },
+    "service4": {
+      "title": "Gestión de Proyectos & Análisis",
+      "description": "Liderazgo técnico con enfoque en resultados. Experiencia en análisis estratégico, documentación técnica, y coordinación de equipos ágiles para entregar soluciones de alto impacto.",
+      "items": {
+        "item1": {
+          "title": "Project Management",
+          "description": "(Metodologías ágiles, Deadlines, Code reviews)"
+        },
+        "item2": {
+          "title": "Análisis de Requerimientos",
+          "description": "(Documentación técnica, Inteligencia de negocios)"
+        },
+        "item3": {
+          "title": "Dashboards & KPIs",
+          "description": "(Monitoreo de resultados, Optimización continua)"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "subtitle": "Código con propósito, Construido para escalar",
+    "header": "Ingeniero de Software apasionado por crear soluciones escalables\nDesarrollo aplicaciones web de alto rendimiento\ndesde el prototipo hasta producción",
+    "intro": "Especializado en construir aplicaciones rápidas e intuitivas—desde interfaces React pixel-perfect hasta backends robustos con Laravel. Cada línea de código es una promesa: calidad que los usuarios sienten.",
+    "featuredProjectLabel": "Proyecto Destacado",
+    "techStackLabel": "Stack Tecnológico",
+    "featuredProject": {
+      "name": "Nexus Learn",
+      "description": "Plataforma SaaS de aprendizaje impulsada por IA que revoluciona la educación con compañeros virtuales personalizados. Aprende Matemáticas, Ciencias, Idiomas y más a través de conversaciones interactivas por voz o chat."
+    },
+    "hobbiesLabel": "Cuando no estoy programando estoy:",
+    "hobbies": {
+      "hobby1": "Caminando en la naturaleza",
+      "hobby2": "Leyendo sobre psicología",
+      "hobby3": "Explorando nuevas herramientas de IA"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "La Lógica se Encuentra con la Estética, Sin Esfuerzo",
+    "headerText": "Proyectos destacados que han sido meticulosamente creados con pasión para generar resultados e impacto.",
+    "project1": {
+      "name": "NeonFlux",
+      "description": "Landing page moderna desarrollada con React 18, TypeScript, Tailwind CSS v3.4 y Vite. Integra elementos 3D con React Three Fiber y animaciones con Framer Motion."
+    },
+    "project2": {
+      "name": "Nexus Learn - AI-Powered Learning Platform",
+      "description": "Transforma tu aprendizaje con compañeros virtuales personalizados impulsados por IA. Estudia Matemáticas, Ciencias, Idiomas y más."
+    },
+    "project3": {
+      "name": "NAR25 CSC - Sitio Web Profesional de Pistolas R25",
+      "description": "Experiencia web inmersiva para productos R25 NA CSC, inspirada en Spylt y potenciada por animaciones GSAP."
+    },
+    "project4": {
+      "name": "Safe Mobility",
+      "description": "Landing page experimental enfocada en micro-interacciones y animaciones fluidas para mejorar la UX/UI"
+    },
+    "project5": {
+      "name": "Sound Bit",
+      "description": "Soundbit es un innovador reproductor de música 8D diseñado para sumergirte en una experiencia auditiva única."
+    },
+    "project6": {
+      "name": "VidSum",
+      "description": "VidSum: Plataforma SaaS para resumir y analizar videos de YouTube con IA. Arquitectura híbrida construida con Next.js 14, Laravel 11, PostgreSQL y automatización con n8n + Gemini."
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Tú lo Sueñas, Yo lo Codifico",
+    "headerText": "¿Tienes una pregunta, propuesta o idea de proyecto? Me encantaría escucharte y discutir más a fondo.",
+    "email": "E-mail",
+    "phone": "Teléfono",
+    "socials": "Redes Sociales",
+    "marqueeText": "solo imagina, yo codifico"
+  },
+  "hero": {
+    "title": "Jhonatan Jácome",
+    "subtitle": "Ingeniero de Software | Full Stack Developer",
+    "text": "Desarrollo soluciones con React, TypeScript, Laravel y automatizaciones con n8n - IA. Transformo ideas en aplicaciones web que generan impacto real."
+  },
+  "serviceSummary": {
+    "service1": "IA & Automatización",
+    "service2a": "Full Stack",
+    "service2b": "Development",
+    "service4": "Bases de Datos"
+  },
+  "contactSummary": {
+    "value1": "Innovación",
+    "value2": "Precisión",
+    "value3": "Confianza",
+    "value4": "Colaboración",
+    "value5": "Excelencia",
+    "cta": "contáctame",
+    "text1": "Construyamos una",
+    "text2": "memorable",
+    "text3": "e",
+    "text4": "inspiradora",
+    "text5": "aplicación web",
+    "text6": "juntos"
+  }
+}

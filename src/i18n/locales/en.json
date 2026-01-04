@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Me",
+    "work": "Projects",
+    "contact": "Contact",
+    "email": "Email",
+    "socials": "Social Media"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Behind the scenes, Beyond the screen",
+    "headerText": "I build secure, high-performance full-stack applications with seamless user experience to drive growth, not headaches.",
+    "service1": {
+      "title": "AI & Automation",
+      "description": "I transform business operations through artificial intelligence and automation. I design conversational chatbots, voicebots, and automated workflows that solve complex challenges and generate measurable impact.",
+      "items": {
+        "item1": {
+          "title": "Conversational AI Agents",
+          "description": "(Chatbots, Voicebots, AI Personalization)"
+        },
+        "item2": {
+          "title": "Process Automation",
+          "description": "(n8n, Make, Zapier, Data Flows)"
+        },
+        "item3": {
+          "title": "System Integration",
+          "description": "(CRMs: Kommo/HubSpot, APIs, Calendly)"
+        }
+      }
+    },
+    "service2": {
+      "title": "Full Stack Development",
+      "description": "I create complete and efficient web solutions with React, TypeScript, and Laravel. Specialized in scalable architecture, robust authentication, and optimized databases for high-performance applications.",
+      "items": {
+        "item1": {
+          "title": "Backend with Laravel & PHP",
+          "description": "(REST APIs, Authentication, Real-time Notifications)"
+        },
+        "item2": {
+          "title": "Modern Frontend",
+          "description": "(React, TypeScript, Next.js, Tailwind CSS)"
+        },
+        "item3": {
+          "title": "Databases",
+          "description": "(PostgreSQL, MySQL, Design and Optimization)"
+        }
+      }
+    },
+    "service3": {
+      "title": "Specialized Frontend Development",
+      "description": "Responsive and pixel-perfect interfaces that users love. I master React with TypeScript, reusable components with shadcn/ui, and smooth animations with GSAP for premium web experiences.",
+      "items": {
+        "item1": {
+          "title": "React + TypeScript",
+          "description": "(Typed Components, Hooks, Context API)"
+        },
+        "item2": {
+          "title": "Modern UI/UX",
+          "description": "(Tailwind CSS, shadcn/ui, Responsive Design)"
+        },
+        "item3": {
+          "title": "Premium Animations",
+          "description": "(GSAP, Framer Motion, Micro-interactions)"
+        }
+      }
+    },
+    "service4": {
+      "title": "Project Management & Analysis",
+      "description": "Technical leadership with a results-focused approach. Experience in strategic analysis, technical documentation, and agile team coordination to deliver high-impact solutions.",
+      "items": {
+        "item1": {
+          "title": "Project Management",
+          "description": "(Agile Methodologies, Deadlines, Code Reviews)"
+        },
+        "item2": {
+          "title": "Requirements Analysis",
+          "description": "(Technical Documentation, Business Intelligence)"
+        },
+        "item3": {
+          "title": "Dashboards & KPIs",
+          "description": "(Results Monitoring, Continuous Optimization)"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Code with purpose, Built to scale",
+    "header": "Software Engineer passionate about building scalable solutions\nI develop high-performance web applications\nfrom prototype to production",
+    "intro": "Specialized in building fast, intuitive applications—from pixel-perfect React interfaces to robust Laravel backends. Every line of code is a promise: quality that users feel.",
+    "featuredProjectLabel": "Featured Project",
+    "techStackLabel": "Tech Stack",
+    "featuredProject": {
+      "name": "Nexus Learn",
+      "description": "AI-powered learning SaaS platform that revolutionizes education with personalized virtual companions. Learn Math, Science, Languages and more through interactive voice or chat conversations."
+    },
+    "hobbiesLabel": "When I'm not coding:",
+    "hobbies": {
+      "hobby1": "Walking in nature",
+      "hobby2": "Reading about psychology",
+      "hobby3": "Exploring new AI tools"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Logic Meets Aesthetics, Effortlessly",
+    "headerText": "Featured projects that have been meticulously crafted with passion to generate results and impact.",
+    "project1": {
+      "name": "NeonFlux",
+      "description": "Modern landing page built with React 18, TypeScript, Tailwind CSS v3.4, and Vite. Integrates 3D elements with React Three Fiber and animations with Framer Motion."
+    },
+    "project2": {
+      "name": "Nexus Learn - AI-Powered Learning Platform",
+      "description": "Transform your learning with AI-powered personalized virtual companions. Study Math, Science, Languages and more."
+    },
+    "project3": {
+      "name": "NAR25 CSC - Professional R25 Spray Guns Website",
+      "description": "Immersive web experience for R25 NA CSC products, inspired by Spylt and powered by GSAP animations."
+    },
+    "project4": {
+      "name": "Safe Mobility",
+      "description": "Experimental landing page focused on micro-interactions and smooth animations to enhance UX/UI"
+    },
+    "project5": {
+      "name": "Sound Bit",
+      "description": "Soundbit is an innovative 8D music player designed to immerse you in a unique auditory experience."
+    },
+    "project6": {
+      "name": "VidSum",
+      "description": "VidSum: SaaS platform to summarize and analyze YouTube videos with AI. Hybrid architecture built with Next.js 14, Laravel 11, PostgreSQL and automation with n8n + Gemini."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "You Dream It, I Code It",
+    "headerText": "Have a question, proposal, or project idea? I'd love to hear from you and discuss further.",
+    "email": "E-mail",
+    "phone": "Phone",
+    "socials": "Social Media",
+    "marqueeText": "just imagine, I code"
+  },
+  "hero": {
+    "title": "Jhonatan Jácome",
+    "subtitle": "Software Engineer | Full Stack Developer",
+    "text": "I develop solutions with React, TypeScript, Laravel, and n8n - AI automations. I transform ideas into web applications that generate real impact."
+  },
+  "serviceSummary": {
+    "service1": "AI & Automation",
+    "service2a": "Full Stack",
+    "service2b": "Development",
+    "service4": "Databases"
+  },
+  "contactSummary": {
+    "value1": "Innovation",
+    "value2": "Precision",
+    "value3": "Trust",
+    "value4": "Collaboration",
+    "value5": "Excellence",
+    "cta": "contact me",
+    "text1": "Let's build a",
+    "text2": "memorable",
+    "text3": "and",
+    "text4": "inspiring",
+    "text5": "web application",
+    "text6": "together"
+  }
+}
