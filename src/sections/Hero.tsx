@@ -3,17 +3,18 @@ import { Planet } from "../components/Planet";
 import { Environment, Float, Lightformer } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import { useTranslation } from "react-i18next";
 
 const Hero: React.FC = () => {
+    const { t } = useTranslation();
     const isMobile = useMediaQuery({ maxWidth: 853 });
-    const text = `Desarrollo soluciones con React, TypeScript, Laravel y automatizaciones con n8n - IA.
-Transformo ideas en aplicaciones web que generan impacto real.`;
+    const text = t('hero.text', { defaultValue: 'Desarrollo soluciones con React, TypeScript, Laravel y automatizaciones con n8n - IA. Transformo ideas en aplicaciones web que generan impacto real.' });
 
     return (
         <section id="home" className="flex flex-col justify-end min-h-screen">
             <AnimatedHeaderSection
-                subTitle={"Ingeniero de Software | Full Stack Developer"}
-                title={"Jhonatan Jácome"}
+                subTitle={t('hero.subtitle', { defaultValue: 'Ingeniero de Software | Full Stack Developer' })}
+                title={t('hero.title', { defaultValue: 'Jhonatan Jácome' })}
                 text={text}
                 textColor={"text-black"}
             />

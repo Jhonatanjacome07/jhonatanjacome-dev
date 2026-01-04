@@ -3,9 +3,12 @@ import { socials } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
+import LanguageToggle from "../components/LanguageToggle";
 
 
 const Navbar: React.FC = () => {
+    const { t } = useTranslation();
     const navRef = useRef<HTMLElement | null>(null);
     const linksRef = useRef<(HTMLDivElement | null)[]>([]);
     const contactRef = useRef<HTMLDivElement | null>(null);
@@ -122,11 +125,11 @@ const Navbar: React.FC = () => {
             >
                 <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl">
                     {[
-                        { id: "home", label: "Inicio" },
-                        { id: "services", label: "Servicios" },
-                        { id: "about", label: "Sobre Mí" },
-                        { id: "work", label: "Proyectos" },
-                        { id: "contact", label: "Contacto" }
+                        { id: "home", label: t('nav.home') },
+                        { id: "services", label: t('nav.services') },
+                        { id: "about", label: t('nav.about') },
+                        { id: "work", label: t('nav.work') },
+                        { id: "contact", label: t('nav.contact') }
                     ].map((section, index) => (
                         <div key={index} ref={(el) => { linksRef.current[index] = el; }}>
                             <Link
@@ -147,13 +150,13 @@ const Navbar: React.FC = () => {
                     className="flex flex-col flex-wrap justify-between gap-8 md:flex-row"
                 >
                     <div className="font-light">
-                        <p className="tracking-wider text-white/50">Correo</p>
+                        <p className="tracking-wider text-white/50">{t('nav.email')}</p>
                         <p className="text-xl tracking-widest lowercase text-pretty">
                             jhonatanjacome99@gmail.com
                         </p>
                     </div>
                     <div className="font-light">
-                        <p className="tracking-wider text-white/50">Redes Sociales</p>
+                        <p className="tracking-wider text-white/50">{t('nav.socials')}</p>
                         <div className="flex flex-col flex-wrap md:flex-row gap-x-2">
                             {socials.map((social, index) => (
                                 <a
@@ -167,6 +170,9 @@ const Navbar: React.FC = () => {
                                 </a>
                             ))}
                         </div>
+                    </div>
+                    <div className="mt-4">
+                        <LanguageToggle />
                     </div>
                 </div>
             </nav>
