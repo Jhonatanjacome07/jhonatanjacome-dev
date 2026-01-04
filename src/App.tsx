@@ -5,6 +5,7 @@ import ServiceSummary from "./sections/ServiceSummary";
 import Services from "./sections/Services";
 import ReactLenis from "lenis/react";
 import About from "./sections/About";
+import TechStack from "./sections/TechStack";
 import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
@@ -42,13 +43,15 @@ const App = () => {
         className={`${isReady ? "opacity-100" : "opacity-0"
           } transition-opacity duration-1000`}
       >
-        <FloatingLanguageToggle  />
+        <FloatingLanguageToggle />
         <Navbar />
         <Hero />
         <ServiceSummary />
+
         <Services />
-        <About />
         <Works />
+        <TechStack />
+        <About />
         <ContactSummary />
         <Contact />
       </div>
