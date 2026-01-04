@@ -70,7 +70,7 @@ const Services: React.FC = () => {
                                 {t(`services.service${index + 1}.description`)}
                             </p>
                             <div className="flex flex-col gap-2 text-2xl sm:gap-4 lg:text-3xl text-white/80">
-                                {service.items.map((item, itemIndex) => (
+                                {service.items.map((_, itemIndex) => (
                                     <div key={`item-${index}-${itemIndex}`}>
                                         <h3 className="flex">
                                             <span className="mr-12 text-lg text-white/30">
