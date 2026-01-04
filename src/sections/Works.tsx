@@ -4,8 +4,10 @@ import { projects } from "../constants";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useTranslation } from "react-i18next";
 
 const Works: React.FC = () => {
+    const { t } = useTranslation();
     /* Refs for hover overlay animations on each project */
     const overlayRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -15,9 +17,7 @@ const Works: React.FC = () => {
     /* Track which project is currently being hovered */
     const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-    const text = `Proyectos destacados que han sido meticulosamente
-    creados con pasión para generar
-    resultados e impacto.`;
+    const text = t('projects.headerText', { defaultValue: 'Proyectos destacados que han sido meticulosamente creados con pasión para generar resultados e impacto.' });
 
     /* Mouse position tracking for smooth preview following */
     const mouse = useRef({ x: 0, y: 0 });
@@ -117,8 +117,8 @@ const Works: React.FC = () => {
     return (
         <section id="work" className="flex flex-col min-h-screen">
             <AnimatedHeaderSection
-                subTitle={"La Lógica se Encuentra con la Estética, Sin Esfuerzo"}
-                title={"Proyectos"}
+                subTitle={t('projects.subtitle', { defaultValue: 'La Lógica se Encuentra con la Estética, Sin Esfuerzo' })}
+                title={t('projects.title')}
                 text={text}
                 textColor={"text-black"}
                 withScrollTrigger={true}
@@ -149,7 +149,7 @@ const Works: React.FC = () => {
                         {/* title */}
                         <div className="flex justify-between items-center px-5 md:px-10 text-black transition-all duration-500 md:group-hover:px-12 md:group-hover:text-white">
                             <h2 className="text-2xl md:text-[26px] lg:text-[32px] leading-tight md:leading-none">
-                                {project.name}
+                                {t(`projects.project${index + 1}.name`)}
                             </h2>
                             <Icon icon="lucide:arrow-up-right" className="size-5 md:size-6 shrink-0" />
                         </div>

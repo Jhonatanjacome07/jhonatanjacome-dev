@@ -4,19 +4,22 @@ import { AnimatedTextLines } from "../components/AnimatedTextLines";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { aboutData } from "../constants";
+import { useTranslation } from "react-i18next";
 
 const About: React.FC = () => {
-    /* Build about text dynamically from centralized constants */
-    const aboutText = `${aboutData.introES}
+    const { t } = useTranslation();
 
-🚀 Proyecto Destacado: ${aboutData.featuredProject.name}
-${aboutData.featuredProject.descriptionES}
+    /* Build about text dynamically from translations */
+    const aboutText = `${t('about.intro')}
 
-💻 Stack Tecnológico:
+🚀 ${t('about.featuredProjectLabel', { defaultValue: 'Proyecto Destacado' })}: ${t('about.featuredProject.name')}
+${t('about.featuredProject.description')}
+
+💻 ${t('about.techStackLabel', { defaultValue: 'Stack Tecnológico' })}:
 ${aboutData.techStack.map(tech => `${tech.category}: ${tech.technologies}`).join('\n')}
 
-${aboutData.hobbiesLabelES}
-${aboutData.hobbies.map(hobby => `${hobby.emoji} ${hobby.textES}`).join('\n')}`;
+${t('about.hobbiesLabel')}
+${aboutData.hobbies.map((hobby, index) => `${hobby.emoji} ${t(`about.hobbies.hobby${index + 1}`)}`).join('\n')}`;
 
     const imgRef = useRef<HTMLImageElement>(null);
 
@@ -47,9 +50,9 @@ ${aboutData.hobbies.map(hobby => `${hobby.emoji} ${hobby.textES}`).join('\n')}`;
     return (
         <section id="about" className="min-h-screen bg-black rounded-b-4xl">
             <AnimatedHeaderSection
-                subTitle={"Código con propósito, Construido para escalar"}
-                title={"Sobre mí"}
-                text={aboutData.headerTextES}
+                subTitle={t('about.subtitle', { defaultValue: 'Código con propósito, Construido para escalar' })}
+                title={t('about.title', { defaultValue: 'Sobre mí' })}
+                text={t('about.header')}
                 textColor={"text-white"}
                 withScrollTrigger={true}
             />
