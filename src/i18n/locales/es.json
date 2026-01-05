@@ -167,6 +167,20 @@
     "text5": "aplicación web",
     "text6": "juntos"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Explorando IA, desarrollo web y tecnología. Comparto aprendizajes, experimentos y descubrimientos del mundo del código.",
+    "latestPosts": "Últimas Publicaciones",
+    "latestPostsDescription": "Descubre mis últimos artículos sobre desarrollo, IA y tecnología",
+    "viewAll": "Ver todos los posts",
+    "allCategories": "Todas",
+    "readMore": "Leer más",
+    "backToBlog": "Volver al blog",
+    "publishedOn": "Publicado el",
+    "externalLinks": "Enlaces externos",
+    "relatedPosts": "Posts relacionados",
+    "categories": "Categorías"
+  },
   "techStack": {
     "title": "Stack Tecnológico",
     "subtitle": "Herramientas que Domino, Soluciones que Construyo",

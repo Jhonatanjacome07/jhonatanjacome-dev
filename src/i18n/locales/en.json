@@ -167,6 +167,20 @@
     "text5": "web application",
     "text6": "together"
   },
+  "blog": {
+    "title": "Blog",
+    "description": "Exploring AI, web development and technology. I share learnings, experiments and discoveries from the world of code.",
+    "latestPosts": "Latest Posts",
+    "latestPostsDescription": "Discover my latest articles about development, AI and technology",
+    "viewAll": "View all posts",
+    "allCategories": "All",
+    "readMore": "Read more",
+    "backToBlog": "Back to blog",
+    "publishedOn": "Published on",
+    "externalLinks": "External links",
+    "relatedPosts": "Related posts",
+    "categories": "Categories"
+  },
   "techStack": {
     "title": "Tech Stack",
     "subtitle": "Tools I Master, Solutions I Build",
