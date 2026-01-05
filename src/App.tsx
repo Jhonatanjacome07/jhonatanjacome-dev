@@ -1,62 +1,38 @@
-import { useEffect, useState } from "react";
-import Navbar from "./sections/Navbar";
-import Hero from "./sections/Hero";
-import ServiceSummary from "./sections/ServiceSummary";
-import Services from "./sections/Services";
-import ReactLenis from "lenis/react";
-import About from "./sections/About";
-import TechStack from "./sections/TechStack";
-import Works from "./sections/Works";
-import ContactSummary from "./sections/ContactSummary";
-import Contact from "./sections/Contact";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Canvas } from "@react-three/fiber";
+import { Preload } from "@react-three/drei";
+
+// Pages
+import HomePage from "./pages/HomePage";
+import Blog from "./pages/Blog";
+import BlogPostPage from "./pages/BlogPost";
+
+// Components
 import FloatingLanguageToggle from "./components/FloatingLanguageToggle";
-
-
-import { useProgress } from "@react-three/drei";
+import LoadingScreen from "./components/LoadingScreen";
 
 const App = () => {
-  const { progress } = useProgress();
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    if (progress === 100) {
-      setIsReady(true);
-    }
-  }, [progress]);
-
   return (
-    <ReactLenis root className="relative w-screen min-h-screen overflow-x-hidden">
-      {!isReady && (
-        <div className="fixed inset-0 z-999 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-700 font-light">
-          <p className="mb-4 text-xl tracking-widest animate-pulse">
-            Loading {Math.floor(progress)}%
-          </p>
-          <div className="relative h-1 overflow-hidden rounded w-60 bg-white/20">
-            <div
-              className="absolute top-0 left-0 h-full transition-all duration-300 bg-white"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-        </div>
-      )}
-      <div
-        className={`${isReady ? "opacity-100" : "opacity-0"
-          } transition-opacity duration-1000`}
-      >
-        <FloatingLanguageToggle />
-        <Navbar />
-        <Hero />
-        <ServiceSummary />
+    <>
+      {/* Canvas invisible solo para el contexto de useProgress */}
+      <Canvas style={{ position: 'fixed', top: 0, left: 0, width: 0, height: 0, pointerEvents: 'none' }}>
+        <Preload all />
+      </Canvas>
 
-        <Services />
-        <Works />
-        <TechStack />
-        <About />
-        <ContactSummary />
-        <Contact />
-      </div>
-    </ReactLenis>
+      <LoadingScreen />
+
+      <Router>
+        <FloatingLanguageToggle />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 
 export default App;
+
+

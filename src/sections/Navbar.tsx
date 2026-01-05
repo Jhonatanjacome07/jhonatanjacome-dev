@@ -4,10 +4,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
+
+
 
 
 const Navbar: React.FC = () => {
     const { t } = useTranslation();
+    const location = useLocation();
+    const navigate = useNavigate();
     const navRef = useRef<HTMLElement | null>(null);
     const linksRef = useRef<(HTMLDivElement | null)[]>([]);
     const contactRef = useRef<HTMLDivElement | null>(null);
@@ -17,6 +22,9 @@ const Navbar: React.FC = () => {
     const iconTl = useRef<gsap.core.Timeline | null>(null);
     const [isOpen, setIsOpen] = useState(false);
     const [showBurger, setShowBurger] = useState(true);
+
+    const isOnBlogPage = location.pathname.startsWith('/blog');
+
     useGSAP(() => {
         gsap.set(navRef.current, { xPercent: 100 });
         gsap.set([linksRef.current, contactRef.current], {
@@ -106,6 +114,21 @@ const Navbar: React.FC = () => {
         };
     }, [isOpen]);
 
+    const handleSectionClick = (sectionId: string) => {
+        toggleMenu();
+
+        if (isOnBlogPage) {
+            // Si estamos en el blog, navegar a home y luego hacer scroll
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
+        }
+    };
+
     const toggleMenu = () => {
         if (isOpen) {
             tl.current?.reverse();
@@ -124,24 +147,34 @@ const Navbar: React.FC = () => {
             >
                 <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-6xl">
                     {[
-                        { id: "home", label: t('nav.home') },
-                        { id: "services", label: t('nav.services') },
-                        { id: "work", label: t('nav.work') },
-                        { id: "techstack", label: t('nav.techstack', { defaultValue: 'Tech Stack' }) },
-                        { id: "about", label: t('nav.about') },
-                        { id: "contact", label: t('nav.contact') }
+                        { id: "home", label: t('nav.home'), isRoute: false },
+                        { id: "services", label: t('nav.services'), isRoute: false },
+                        { id: "work", label: t('nav.work'), isRoute: false },
+                        { id: "techstack", label: t('nav.techstack', { defaultValue: 'Tech Stack' }), isRoute: false },
+                        { id: "about", label: t('nav.about'), isRoute: false },
+                        { id: "blog", label: t('blog.title'), isRoute: false },
+                        { id: "contact", label: t('nav.contact'), isRoute: false }
                     ].map((section, index) => (
                         <div key={index} ref={(el) => { linksRef.current[index] = el; }}>
-                            <Link
-                                className="transition-all duration-300 cursor-pointer hover:text-white"
-                                to={section.id}
-                                smooth
-                                offset={0}
-                                duration={2000}
-                                onClick={toggleMenu}
-                            >
-                                {section.label}
-                            </Link>
+                            {isOnBlogPage ? (
+                                <a
+                                    className="transition-all duration-300 cursor-pointer hover:text-white"
+                                    onClick={() => handleSectionClick(section.id)}
+                                >
+                                    {section.label}
+                                </a>
+                            ) : (
+                                <Link
+                                    className="transition-all duration-300 cursor-pointer hover:text-white"
+                                    to={section.id}
+                                    smooth
+                                    offset={0}
+                                    duration={2000}
+                                    onClick={toggleMenu}
+                                >
+                                    {section.label}
+                                </Link>
+                            )}
                         </div>
                     ))}
                 </div>
