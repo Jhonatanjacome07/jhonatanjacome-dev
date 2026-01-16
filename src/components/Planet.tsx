@@ -27,7 +27,7 @@ export function Planet(props: PlanetProps) {
 
     const ringContainer = useRef<THREE.Mesh>(null);
 
-    const { nodes, materials } = useGLTF("/models/Planet.glb") as unknown as GLTFResult;
+    const { nodes } = useGLTF("/models/Planet.glb") as unknown as GLTFResult;
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -72,32 +72,76 @@ export function Planet(props: PlanetProps) {
     return (
         <group ref={shapeContainer} {...props} dispose={null}>
             <group ref={shperesContainer}>
+                {/* Core - Warm Bronze */}
                 <mesh
                     castShadow
                     receiveShadow
                     geometry={nodes.Sphere.geometry}
-                    material={materials["Material.002"]}
                     rotation={[0, 0, 0.741]}
-                />
+                >
+                    <meshStandardMaterial
+                        color="#C59867"
+                        emissive="#D4A574"
+                        emissiveIntensity={0.1}
+                        metalness={0.6}
+                        roughness={0.4}
+                    />
+                </mesh>
+                {/* Moon - Soft Beige */}
                 <mesh
                     castShadow
                     receiveShadow
                     geometry={nodes.Sphere2.geometry}
-                    material={materials["Material.001"]}
                     position={[0.647, 1.03, -0.724]}
                     rotation={[0, 0, 0.741]}
                     scale={0.223}
-                />
+                >
+                    <meshStandardMaterial
+                        color="#D9BB9B"
+                        emissive="#E5C9A8"
+                        emissiveIntensity={0.08}
+                        metalness={0.5}
+                        roughness={0.5}
+                    />
+                </mesh>
             </group>
+            {/* First Ring - Beige */}
             <mesh
                 ref={ringContainer}
                 castShadow
                 receiveShadow
                 geometry={nodes.Ring.geometry}
-                material={materials["Material.001"]}
                 rotation={[-0.124, 0.123, -0.778]}
                 scale={2}
-            />
+            >
+                <meshStandardMaterial
+                    color="#D9BB9B"
+                    emissive="#E5C9A8"
+                    emissiveIntensity={0.08}
+                    metalness={0.7}
+                    roughness={0.3}
+                    transparent={true}
+                    opacity={0.85}
+                />
+            </mesh>
+            {/* Second Ring - Light Cream */}
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Ring.geometry}
+                rotation={[0.124, -0.123, -0.778]}
+                scale={2.3}
+            >
+                <meshStandardMaterial
+                    color="#EBDCCB"
+                    emissive="#F2E8DC"
+                    emissiveIntensity={0.05}
+                    metalness={0.6}
+                    roughness={0.4}
+                    transparent={true}
+                    opacity={0.8}
+                />
+            </mesh>
         </group>
     );
 }
